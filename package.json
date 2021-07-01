@@ -1,0 +1,17 @@
+{
+  "name": "api-automation-talk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Julia Pottinger",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "jsonschema": "^1.4.0",
+    "mocha": "^9.0.1",
+    "supertest": "^6.1.3"
+  }
+}
