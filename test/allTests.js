@@ -2,8 +2,6 @@ const request = require('supertest');
 const expect = require('chai').expect
 var validate = require('jsonschema').validate
 
-const ENDPOINT = 'https://restful-booker.herokuapp.com/booking'
-
 const schema = require('./schema')
 const bookingSchema = require('./bookingSchema')
 let bookingId = 0
@@ -82,25 +80,26 @@ describe('Get all posts', ()=>{
 
 describe('Update Post',() =>{
   it('Verify that the post is not updated with an invalid token', async ()=>{
+  
     const url = `https://restful-booker.herokuapp.com/booking/${bookingId}`
 
-  request(url)
-    .put('/')
-    .send({
-      "firstname" : "Julia",
-      "lastname" : "Browns",
-      "totalprice" : 567,
-      "depositpaid" : true,
-      "bookingdates" : {
-          "checkin" : "2020-01-01",
-          "checkout" : "2021-01-01"
-      },
-      "additionalneeds" : "Breakfast,Lunch"
-    })
-    .set('Accept', 'application/json')
-    .set('Authorization', 'Basic YWRtaW46cGFzc3dvcmQxMjM')
-    .expect(403)
-    .expect('Forbidden')
+    request(url)
+      .put('/')
+      .send({
+        "firstname" : "Julia",
+        "lastname" : "Browns",
+        "totalprice" : 567,
+        "depositpaid" : true,
+        "bookingdates" : {
+            "checkin" : "2020-01-01",
+            "checkout" : "2021-01-01"
+        },
+        "additionalneeds" : "Breakfast,Lunch"
+      })
+      .set('Accept', 'application/json')
+      .set('Authorization', 'Basic YWRtaW46cGFzc3dvcmQxMjM')
+      .expect(403)
+      .expect('Forbidden')
   })
 
   it('Verify that the post is not updated with an invalid body', async ()=>{

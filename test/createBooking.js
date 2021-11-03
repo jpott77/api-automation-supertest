@@ -2,11 +2,10 @@ const request = require('supertest');
 var validate = require('jsonschema').validate
 const expect = require('chai').expect
 
-const schema = require('./schema')
 const bookingSchema = require('./bookingSchema')
 
-describe('Full Booking Path', ()=>{
-    it('verify multistep API workflow ', async () =>{
+describe('Positive Booking Scenario -', ()=>{
+    it('verify creating a sucessful booking', async () =>{
       let url = 'https://restful-booker.herokuapp.com/booking'
       let res = await request(url)
       .post('/')
