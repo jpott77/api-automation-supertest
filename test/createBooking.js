@@ -2,7 +2,7 @@ const request = require('supertest');
 var validate = require('jsonschema').validate
 const expect = require('chai').expect
 
-const bookingSchema = require('./bookingSchema')
+const bookingSchema = require('./schema/bookingSchema')
 
 describe('Positive Booking Scenario -', ()=>{
     it('verify creating a sucessful booking', async () =>{

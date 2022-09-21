@@ -2,8 +2,7 @@ const request = require('supertest');
 const expect = require('chai').expect
 var validate = require('jsonschema').validate
 
-const schema = require('./schema')
-const bookingSchema = require('./bookingSchema')
+const bookingSchema = require('./schema/bookingSchema')
 let bookingId = 0
 
 describe('Full Booking Path', ()=>{
