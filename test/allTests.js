@@ -78,8 +78,8 @@ describe('Get all posts', ()=>{
   })
 })
 
-describe('Update Post',() =>{
-  it('Verify that the post is not updated with an invalid token', async ()=>{
+describe('Update Booking',() =>{
+  it('Verify that the booking is not updated with an invalid token', async ()=>{
   
     const url = `https://restful-booker.herokuapp.com/booking/${bookingId}`
 
@@ -102,7 +102,7 @@ describe('Update Post',() =>{
       .expect('Forbidden')
   })
 
-  it('Verify that the post is not updated with an invalid body', async ()=>{
+  it('Verify that the booking is not updated with an invalid body', async ()=>{
       const url = 'https://restful-booker.herokuapp.com/booking/10'
 
       request(url)
