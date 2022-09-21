@@ -37,11 +37,9 @@ describe('Full Booking Path', ()=>{
       .get('')
       .set('Accept', 'application/json')
       .expect(200)
-      .then(response => {
-          expect(response.body.firstname, 'Julia')
-          expect(response.body.lastname, 'Brown')
-          expect(response.body.additionalneeds, 'Breakfast,Lunch')
-      })
+      .expect('firstname', 'Julia')
+      .expect('lastname', 'Brown')
+      .expect('additionalneeds', 'Breakfast,Lunch')
 
     // Use Id to update booking details
     url = `https://restful-booker.herokuapp.com/booking/${bookingId}`
